@@ -1,0 +1,52 @@
+# === General Node.js (backend) ===
+node_modules/
+logs
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+.npm
+.eslintcache
+.node_repl_history
+.env
+
+# === React Native (MobileApp) ===
+MobileApp/node_modules/
+MobileApp/android/.gradle/
+MobileApp/android/app/build/
+MobileApp/ios/Pods/
+MobileApp/ios/build/
+MobileApp/ios/*.xcworkspace
+MobileApp/ios/DerivedData/
+MobileApp/ios/.DS_Store
+MobileApp/.expo/
+MobileApp/.expo-shared/
+MobileApp/.idea/
+MobileApp/.vscode/
+MobileApp/.DS_Store
+MobileApp/*.log
+MobileApp/*.env
+MobileApp/coverage/
+MobileApp/web-build/
+
+# Watchman files
+MobileApp/.watchmanconfig
+
+# Metro bundler cache
+MobileApp/.metro-cache/
+
+# Expo CLI state
+MobileApp/.expo/
+
+# Fastlane
+MobileApp/ios/fastlane/report.xml
+MobileApp/android/fastlane/report.xml
+
+# Misc
+*.swp
+*.swo
+*.tmp
+.DS_Store
+Thumbs.db
