@@ -68,7 +68,7 @@ const Login = () => {
           });
           navigation.reset({
             index: 0,
-            routes: [{name: 'Home'}],
+            routes: [{name: 'MainApp'}],
           });
         } else {
           Toast.show({
