@@ -66,10 +66,11 @@ const Login = () => {
             text1: result.message,
             text2: 'User has successfully been signed in',
           });
-          navigation.reset({
-            index: 0,
-            routes: [{name: 'MainApp'}],
-          });
+          // navigation.reset({
+          //   index: 0,
+          //   routes: [{name: 'MainApp'}],
+          // });
+          navigation.navigate("MainApp")
         } else {
           Toast.show({
             type: 'error',
@@ -108,7 +109,7 @@ const Login = () => {
           });
           navigation.reset({
             index: 0,
-            routes: [{name: 'Home'}],
+            routes: [{name: 'MainApp'}],
           });
         } else {
           Toast.show({

@@ -22,6 +22,7 @@ import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import NetInfo from '@react-native-community/netinfo';
 import BottomTabNavigator from './components/BottomTabNavigator';
 import Settings from './pages/Settings';
+import UpdateProfile from './pages/UpdateProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -88,6 +89,7 @@ const MainNavigator = ({isConnected}) => {
           <Stack.Screen name="Login" component={Login} />
 
           <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
         </Stack.Navigator>
       </NavigationContainer>
       {!isConnected && <OfflineBanner />}

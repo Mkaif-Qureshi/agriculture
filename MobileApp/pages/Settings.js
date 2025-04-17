@@ -23,7 +23,7 @@ const Settings = () => {
   const [progress, setProgress] = useState(0);
 
   const btnList = [
-    {name: 'Update Profile', route: ''},
+    {name: 'Update Profile', route: 'UpdateProfile'},
     {name: 'Documents', route: ''},
     {name: 'Change Language', route: ''},
     {name: 'Change Password', route: ''},
