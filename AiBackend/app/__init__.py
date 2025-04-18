@@ -8,7 +8,12 @@ def create_app():
     # Register blueprints
     from app.routes.govscheme import govscheme_bp
     from app.routes.translate import translate_bp
+    from app.routes.plant_disease import plant_disease_bp
+    from app.routes.postharvest import postharvest_bp
+
     app.register_blueprint(govscheme_bp)
     app.register_blueprint(translate_bp)
+    app.register_blueprint(plant_disease_bp)
+    app.register_blueprint(postharvest_bp)
 
     return app
