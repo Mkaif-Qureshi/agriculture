@@ -15,6 +15,7 @@ export const theme = {
   border: '#DDD5CC', // Light border
   shadow: '#B3A89D', // Softer shadow
   overlay: 'rgba(0,0,0,0.05)',
+  blue : '#4CB3FE',
 
   text: '#3A2E26', // Primary text (dark brown)
   text2: '#5C5048', // Secondary text

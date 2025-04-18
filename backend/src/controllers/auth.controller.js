@@ -272,6 +272,7 @@ export const getProfileCompletion = async (req,res) =>{
     const percentage = Math.round((filled / total) * 100);
 
     return res.json({
+      success : true,
       percentage,
       filledFields: filled,
       totalFields: total,
@@ -279,7 +280,7 @@ export const getProfileCompletion = async (req,res) =>{
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ success : false , message: 'Server error' });
   }
 }
 
