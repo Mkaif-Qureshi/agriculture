@@ -3,3 +3,10 @@ flask-cors
 python-dotenv
 groq
 requests
+langchain 
+langchain-community 
+langchain-mistralai 
+faiss-cpu chromadb 
+pypdf 
+python-docx 
+sentence-transformers
