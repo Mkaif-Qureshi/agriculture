@@ -12,6 +12,7 @@ def create_app():
     from app.routes.postharvest import postharvest_bp
     from app.routes.agri_advisory import agri_advisory_bp
     from app.routes.fertilizer import fertilizer_bp
+    from app.routes.market import weather_market_bp
 
     app.register_blueprint(govscheme_bp)
     app.register_blueprint(translate_bp)
@@ -19,5 +20,6 @@ def create_app():
     app.register_blueprint(postharvest_bp)
     app.register_blueprint(agri_advisory_bp)
     app.register_blueprint(fertilizer_bp)
+    app.register_blueprint(weather_market_bp)
 
     return app

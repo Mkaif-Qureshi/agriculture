@@ -8,7 +8,7 @@ from groq import Groq
 
 load_dotenv()
 
-fertilizer_blueprint = Blueprint('fertilizer', __name__)
+fertilizer_bp= Blueprint('fertilizer', __name__)
 
 # ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
 
@@ -196,7 +196,7 @@ def get_weather(lat, lon):
 
 # ─── ROUTE 1: FARM DATA (location + soil) ─────────────────────────────────────
 
-@fertilizer_blueprint.route("/api/farm_data", methods=["GET"])
+@fertilizer_bp.route("/api/farm_data", methods=["GET"])
 def farm_data_route():
     try:
         location = get_location()
@@ -214,7 +214,7 @@ def farm_data_route():
 
 # ─── ROUTE 2: FERTILIZER RECOMMENDATION ───────────────────────────────────────
 
-@fertilizer_blueprint.route("/api/fertilizer_recommendation", methods=["POST"])
+@fertilizer_bp.route("/api/fertilizer_recommendation", methods=["POST"])
 def fertilizer_route():
     try:
         req_json = request.get_json()
