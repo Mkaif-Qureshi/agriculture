@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Blueprint, request, jsonify
 import requests
 import os
 import datetime
@@ -8,7 +8,7 @@ from groq import Groq
 
 load_dotenv()
 
-app = Flask(__name__)
+fertilizer_blueprint = Blueprint('fertilizer', __name__)
 
 # ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
 
@@ -48,10 +48,7 @@ In your response:
 Use clear, jargon‑free language, and localize units & terminology for Indian farmers.  
 """
 
-
 # ─── LLM FUNCTION ─────────────────────────────────────────────────────────────
-
-# ─── LLM CALL ────────────────────────────────────────────────────────────────
 
 def get_fertilizer_recommendation(data, crop):
     client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -199,7 +196,7 @@ def get_weather(lat, lon):
 
 # ─── ROUTE 1: FARM DATA (location + soil) ─────────────────────────────────────
 
-@app.route("/api/farm_data", methods=["GET"])
+@fertilizer_blueprint.route("/api/farm_data", methods=["GET"])
 def farm_data_route():
     try:
         location = get_location()
@@ -217,7 +214,7 @@ def farm_data_route():
 
 # ─── ROUTE 2: FERTILIZER RECOMMENDATION ───────────────────────────────────────
 
-@app.route("/api/fertilizer_recommendation", methods=["POST"])
+@fertilizer_blueprint.route("/api/fertilizer_recommendation", methods=["POST"])
 def fertilizer_route():
     try:
         req_json = request.get_json()
@@ -252,8 +249,3 @@ def fertilizer_route():
 
     except Exception as e:
         return jsonify({"error": f"Internal server error: {str(e)}"}), 500
-
-# ─── MAIN ─────────────────────────────────────────────────────────────────────
-
-if __name__ == "__main__":
-    app.run(debug=True, port=6000)
