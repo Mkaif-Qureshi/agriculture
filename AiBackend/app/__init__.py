@@ -10,10 +10,12 @@ def create_app():
     from app.routes.translate import translate_bp
     from app.routes.plant_disease import plant_disease_bp
     from app.routes.postharvest import postharvest_bp
+    from app.routes.agri_advisory import agri_advisory_bp
 
     app.register_blueprint(govscheme_bp)
     app.register_blueprint(translate_bp)
     app.register_blueprint(plant_disease_bp)
     app.register_blueprint(postharvest_bp)
+    app.register_blueprint(agri_advisory_bp)
 
     return app
